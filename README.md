@@ -53,27 +53,6 @@ require 'rails-controller-testing'
 Rails::Controller::Testing.install
 ```
 
-## Usage
-
-### assigns
-
-`assigns` allows you to access the instance variables that have been passed to
-your views.
-
-```ruby
-class PostsController < ActionController::Base
-  def index
-    @posts = Post.all
-  end
-end
-
-class PostControllerTest < ActionController::TestCase
-  def test_index
-    get :index
-    assert_equal Post.all, assigns(:posts)
-  end
-end
-```
 
 ### assert_template
 
